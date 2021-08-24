@@ -15,6 +15,13 @@
 - [DS3231 RTC Library](https://github.com/sleemanj/DS3231_Simple "DS3231_Simple") by sleemanj
 - [Dusk2Dawn Library](https://github.com/dmkishi/Dusk2Dawn "Dusk2Dawn") by dmkishi
 
+### Set-Up time in RTC module:
+This step is required to Set-Up the date-time for the first time.
+- In Arduino IDE go to File>Examples>DS3231_Simple>z1_TimeAndDate>SetDateTime example.
+- Replace date-time, compile and upload your sketch to Arduino board.
+
+![SetDateTime](Screenshot.png "SetDateTime")
+
 ### Details:
 I have a total of 1kW solar panels installed on rooftop of my house. Power outages in my area are not so bad and the UPS keeps the batteries fully charged at all times. I had installed MPPT solar charge controller to maximize the solar power uses but since the UPS keeps the batteries fully charged, the solar power uses was virtually zero. 
 
