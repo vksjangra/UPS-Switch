@@ -3,7 +3,12 @@
 #include "cie1931.h"          //Lookup table for PWM Duty Cycles for linear brightness control of Sunrise LED lights
 
 DS3231_Simple Clock;
+float latitude = 0.0000000;           // Replace your co-ordinates and timezone
+float longitude = 0.000000;
+float timezone = 0.0;
 
+Dusk2Dawn MyCity(latitude, longitude, timezone);     // Location and time-zone.
+DateTime MyDateAndTime;                              // Create a variable to hold date-time data
 
 void setup() 
 
@@ -19,9 +24,7 @@ void setup()
   
 
 void loop() 
-{
-   DateTime MyDateAndTime;           // Create a variable to hold date-time data
-   
+{  
    long Now,j,alarm_start, alarm_stop;     //Now(Time in Minutes from midnight)
    double Now_In_Seconds,i,x;              //Now_In_Seconds(Time in seconds from midnight)
    int Year,Month,Day;
@@ -31,7 +34,6 @@ void loop()
    while(1)
    {
       MyDateAndTime = Clock.read();     // Ask the DS3231 RTC clock module for the data.
-      Dusk2Dawn MyCity(29.4897, 76.7593, 5.5);     // My city Co-ordinates(29.4897, 76.7593) and times zone(+5:30).
       Day=MyDateAndTime.Day;                               
       Month=MyDateAndTime.Month;
       Year=2000+MyDateAndTime.Year;
